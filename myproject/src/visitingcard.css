@@ -1,0 +1,70 @@
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Mozilla+Headline:wght@200..700&family=Orbitron:wght@400..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Share+Tech+Mono&display=swap');
+
+
+.component-1{
+    font-family: "Libertinus Serif", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97.5svh;
+    
+}
+.grand-parent{
+    perspective: 500px;
+}
+.card-body{
+    
+    width:350px;
+    height: 300px;
+    transition: transform 1s linear;
+    transform-style: preserve-3d;
+    
+    position: relative;
+    
+}
+.card-body:hover{
+    transform: rotateY(180deg);
+}
+.card-front{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+    box-shadow: 0px 0px 20px 1px rgb(203, 197, 197);
+    background: linear-gradient(to right,#5a2da7,#e73d9d);
+    color:white;
+    position: absolute;
+    color: white;
+    border-radius: 10px;
+}
+.card-back{
+    display: flex;
+    padding:22px;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+    background-color: pink;
+    color:black;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    box-shadow: 0px 0px 20px 1px rgb(255, 246, 246);
+    letter-spacing: 0.5;
+    border-radius: 10px;
+}
+.virat-img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: url("./cheeku.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h3{
+    text-align: center;
+}
+ */
