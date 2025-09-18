@@ -5,11 +5,20 @@ import './App.css'
 import Name from './Name'
 import Cards from './Cards'
 function App() {
-  
+  const [x , setx] = useState(1);
+  const Change = () => {
+      if(x==true){
+        setx(false);
+      }
+      else{
+        setx(true);
+      }
+  }
 
   return (
     <>
-      <Cards/>
+      {x==true ? <h1>Hello</h1> : <h1>Bye</h1>}
+      <button onClick={Change}>Change State</button>
     </>
   )
 }
