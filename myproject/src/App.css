@@ -1,4 +1,4 @@
-.form-body{
+/* .form-body{
   margin: 0;
   padding: 0;
   background-color: aliceblue;
@@ -11,6 +11,7 @@ form {
   justify-content: center;
   align-items: center;
 }
+  
 button{
   cursor: pointer;
   display: block;
@@ -32,10 +33,10 @@ button:hover{
   background-color: rgb(218, 244, 255);
   width: 100%;
   height: max-content;
-  /* margin-top: 5px; */
+  
 }
 .child {
-  /* border: 1px solid blue; */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,4 +47,17 @@ button:hover{
   border-radius: 8px;
   margin: 10px 10px;
   background-color: white;
+} */
+ .form-body{
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+}
+ form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
 }

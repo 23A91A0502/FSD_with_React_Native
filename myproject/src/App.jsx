@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -6,54 +6,30 @@ import './App.css'
 import Name from './Name'
 import Cards from './Cards'
 function App() {
-  const fun = () => {
-    setData([...Data,userData]);
-    userData={
-       "firstname":"",
-       "lastname":"",
-       "email":""
-    };
-  };
-  var userData = {
-    "firstname":"",
-    "lastname":"",
-    "email":""
-  };
-  const [Data,setData] = useState([]);
-  const getData = (key,event) => {
-      userData[key]=event.target.value;
-  };
+  const [X,setX]=useState(0);
+  const [y,sety]=useState(0);
+  useEffect(()=>{
+      console.log('Executed');
+  },[X]);
   return (
     <>
     <div className="form-body">
       <form>
         <div>
           <label>Firstname: </label>
-          <input type='text' onChange={(event)=>getData("firstname",event)}/>
+          <input type='text' />
         </div>
         <div>
           <label>Lastname: </label>
-          <input type='text' onChange={(event)=>getData("lastname",event)}/>
+          <input type='text' />
         </div>
         <div>
           <label>Email: </label>
-          <input type='email' onChange={(event)=>getData("email",event)}/>
+          <input type='email'/>
         </div>
       </form>
-      <button onClick={fun}>Add Data</button>
-      </div>
-      <div className="parent">
-        {
-        Data.map((ele,index)=>{
-          return (
-           <div className="child">
-             <div>Firstname:{ele.firstname}</div>
-             <div>Lastname:{ele.lastname}</div>
-             <div>Email:{ele.email}</div>
-           </div>
-          );
-        })
-        }
+      <button onClick={()=>setX(X+1)}>Add Data</button>{X}
+      <button onClick={()=>sety(y+1)}>add data</button>
       </div>
     </>
   )
