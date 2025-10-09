@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.grand-parent{
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom right,#140152,#22007c,#3c096c,#722e9a);
+}
+
+/* parent is a column flex container */
+.parent{
+  font-family: "Outfit", sans-serif;
+  border-radius: 12px;
+  width: 350px;
+  height: 350px;        /* fixed overall size */
+  padding: 15px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  /* keep rounded corners and clip children (including scrollbar) */
+  overflow: hidden;
+}
+
+/* header and input keep natural height */
+.heading{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #00296b;
+}
+
+.to-do-img{
+  width: 50px;
+  height: 50px;
+}
+
+.input-field{
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* input and button styling */
+.input-field input{
+  font-family: "Outfit", sans-serif;
+  width: 250px;
+  height: 34px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(245, 242, 242);
+  padding-left: 15px;
+}
+
+.input-field button{
+  font-family: "Outfit", sans-serif;
+  width: 90px;
+  height: 34px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ff5400;
+  color: white;
+}
+
+/* ----- THE FIX: inner scroll area ----- */
+.task-list {
+  /* take remaining vertical space and become scrollable */
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* optional: give a bit of right padding so content doesn't hide under scrollbar */
+  padding-right: 150px;
+}
+
+/* tasks */
+.child{
+  padding: 12px;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* optional: nicer stable scrollbar behavior (supported browsers) */
+.parent { scrollbar-gutter: stable; }
+
+ .task-item {
+  width: 280px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  
+}
+
+
+.task-text {
+  flex: 1;               /* take up all space between checkbox and ❌ */
+  margin-left: 10px;      
+  overflow-wrap: anywhere; /* prevent overflow for long words */
+}
+
+.delete-btn {
+  cursor: pointer;
+  color: #ff5400;
+  font-weight: bold;
+  margin-left: 10px;
+  color: rgb(201, 199, 199);
+}
+
