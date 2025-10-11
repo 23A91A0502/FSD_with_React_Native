@@ -5,6 +5,9 @@
     font-family: "Outfit", sans-serif;
 }
 .header{
+    position: fixed;
+    top:0;
+    left:0;
     height: 70px;
     background-color: rgb(33, 33, 87);
     display: flex;
@@ -30,7 +33,7 @@
     font-weight: bold;
 }
 .body{
-    height: 85vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,6 +64,9 @@
     background: none;
     border: 1px solid grey;
     color:white;
+}
+#image-input{
+    border: none;
 }
 .form div label{
     color: white;

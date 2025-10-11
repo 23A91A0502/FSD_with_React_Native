@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useContext } from "react";
 import './Page1.css';
-import { Form } from "react-router-dom";
+import Store from "./Store";
 import { Link } from 'react-router-dom';
-const Page1 = ({AllData,setAllData}) => {
+const Page1 = () => {
+    const { AllData, setAllData } = useContext(Store);
 
     const [FormData, setFormData] = useState({
         name: "",
@@ -16,9 +18,10 @@ const Page1 = ({AllData,setAllData}) => {
         if (field === "image") {
             const file = event.target.files[0];
             if (file) {
+                const imageURL = URL.createObjectURL(file);
                 setFormData({
                     ...FormData,
-                    image: file,
+                    image: imageURL,
                 });
             }
         } else {
@@ -29,15 +32,18 @@ const Page1 = ({AllData,setAllData}) => {
         }
     };
 
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         alert("Form Submitted!!");
-        setAllData([...AllData,FormData]);
+        setAllData([...AllData, FormData]);
         setFormData({
-            name:"",
-            brand:"",
-            price:"",
-            image:null,
+            name: "",
+            brand: "",
+            price: "",
+            image: null,
         })
     };
 
@@ -52,8 +58,8 @@ const Page1 = ({AllData,setAllData}) => {
     return <>
         {/* header */}
         <div className="header">
-            <Link to="/View"> 
-            <button className="view-data-btn">View Data</button>
+            <Link to="/View">
+                <button className="view-data-btn">View Data</button>
             </Link>
         </div>
         <div className="body">
@@ -75,8 +81,8 @@ const Page1 = ({AllData,setAllData}) => {
                         </div>
                         <div>
                             <label>Image:</label>
-                            <input type="file" onChange={(event) => userInput("image", event)} />
-                            
+                            <input id="image-input" type="file" onChange={(event) => userInput("image", event)} />
+
                         </div>
                     </div>
 
