@@ -20,15 +20,21 @@ const View = () => {
             <p>No data found. Please add something.</p>
           ) : (
             AllData.map((ele, index) => (
-              <div className="child" key={index}>
-                <div className="Picture">
-                  <img src={ele.image} alt={ele.name} className="product-img" />
+              <Link
+                to={`/details/${index}`}
+                key={index}
+                style={{ textDecoration: "none" }}
+              >
+                <div className="child" key={index}>
+                  <div className="Picture">
+                    <img src={ele.image} alt={ele.name} className="product-img" />
+                  </div>
+                  <div className="details">
+                    <div className="Brand"><h3>Brand : {ele.brand}</h3></div>
+                    <div className="Price"><h3>Price : {ele.price}/-</h3></div>
+                  </div>
                 </div>
-                <div className="details">
-                <div className="Brand"><h3>Brand : {ele.brand}</h3></div>
-                <div className="Price"><h3>Price : {ele.price}/-</h3></div>
-                </div>
-              </div>
+              </Link>
             ))
           )}
         </div>
